@@ -1,215 +1,712 @@
 /* =========================================================
-   TEAM HOMEPAGE - Starbucks-style layout
-   DOMINANT colour: indigo  |  SECONDARY: mint and peach
+   TEAM GIT ASSIGNMENT
+   Theme: Indigo, Mint and Peach
    Font: Montserrat
    ========================================================= */
 
-/* 1. COLOURS + FONT (change them here) */
-:root {
-  /* dominant */
-  --bg:     #17123a;  /* very dark indigo page   */
-  --indigo: #5548b6;  /* panels, buttons, nav    */
-  --violet: #7a6bf0;  /* hover / highlight       */
 
-  /* secondary */
-  --mint:   #dff3ec;  /* photo boxes, outline, accents */
-  --peach:  #fbe3d6;  /* small accent text       */
-  --card:   #ebe8fb;  /* light card (like the grey cards in the reference) */
-  --white:  #ffffff;
+/* ========== 1. COLOURS AND FONT ========== */
+
+:root {
+  --bg: #17123a;
+  --indigo: #5548b6;
+  --violet: #7a6bf0;
+
+  --mint: #dff3ec;
+  --peach: #fbe3d6;
+
+  --card: #ebe8fb;
+  --white: #ffffff;
 
   --font: "Montserrat", "Segoe UI", Arial, sans-serif;
 }
 
-/* 2. BASE */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+
+/* ========== 2. RESET AND BASE ========== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
 
 body {
   font-family: var(--font);
   color: var(--white);
+  min-height: 100vh;
 
-  /* Soft lighting: blurry colour spots on the dark base */
   background:
-    radial-gradient(circle at 80% 15%, rgba(122, 107, 240, .55), transparent 40%),
-    radial-gradient(circle at 10% 60%, rgba(223, 243, 236, .15), transparent 40%),
-    radial-gradient(circle at 60% 100%, rgba(251, 227, 214, .15), transparent 40%),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(122, 107, 240, 0.55),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 10% 60%,
+      rgba(223, 243, 236, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 60% 100%,
+      rgba(251, 227, 214, 0.15),
+      transparent 40%
+    ),
     var(--bg);
+
   background-attachment: fixed;
 }
 
-/* 3. NAV: 3 columns so the pill stays in the centre */
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ========== 3. NAVIGATION ========== */
+
 .nav {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 20px 6vw;
+  gap: 16px;
 }
+
 .nav__logo {
   display: grid;
   place-items: center;
-  width: 52px; height: 52px;
+
+  width: 52px;
+  height: 52px;
+
   border-radius: 50%;
   background: var(--mint);
   color: var(--indigo);
+
+  font-size: 16px;
   font-weight: 900;
+  letter-spacing: 1px;
 }
+
 .nav__pill {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 6px;
+
   padding: 6px;
   background: var(--white);
   border-radius: 999px;
 }
+
 .nav__pill a {
-  padding: 8px 22px;
+  padding: 10px 18px;
+
   border-radius: 999px;
   color: var(--bg);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background .2s, color .2s;
-}
-.nav__pill a.active,
-.nav__pill a:hover { background: var(--indigo); color: var(--white); }
 
-/* 4. HERO */
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav__pill a.active,
+.nav__pill a:hover {
+  background: var(--indigo);
+  color: var(--white);
+}
+
+.nav__pill a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ========== 4. HERO SECTION ========== */
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  padding: 50px 0 60px 6vw;   /* no right padding: panel touches the edge */
+
+  padding: 50px 0 60px 6vw;
 }
-.hero__text { flex: 1; max-width: 460px; }
-.hero__small { font-size: 14px; font-weight: 500; letter-spacing: 1px; }
+
+.hero__text {
+  flex: 1;
+  max-width: 460px;
+}
+
+.hero__small {
+  color: var(--peach);
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+}
+
 .hero__title {
+  margin: 10px 0 20px;
+
   font-size: clamp(42px, 6vw, 80px);
   font-weight: 900;
   line-height: 1.05;
-  margin: 6px 0 18px;
+  letter-spacing: -2px;
 }
-.hero__title span { color: var(--mint); }
-.hero__desc { font-size: 14px; line-height: 1.7; margin-bottom: 26px; }
+
+.hero__title span {
+  color: var(--mint);
+}
+
+.hero__desc {
+  max-width: 430px;
+  margin-bottom: 28px;
+
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Hero button */
 
 .btn {
   display: inline-block;
-  padding: 12px 30px;
+
+  padding: 14px 28px;
+
+  border: 2px solid var(--white);
   border-radius: 999px;
+
   background: var(--white);
   color: var(--bg);
-  font-size: 13px;
-  font-weight: 800;
-  text-decoration: none;
-  transition: background .2s, color .2s;
-}
-.btn:hover { background: var(--violet); color: var(--white); }
 
-/* Big rounded panel on the right */
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  background: var(--violet);
+  border-color: var(--violet);
+  color: var(--white);
+
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========== 5. HERO VIDEO PANEL ========== */
+
 .hero__panel {
   flex: 1.3;
+  min-width: 0;
+
   display: flex;
   align-items: stretch;
   gap: 24px;
+
   padding: 28px;
+
   background: var(--indigo);
-  border-radius: 50px 0 0 50px;   /* rounded on the left only */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, .35);
+  border-radius: 50px 0 0 50px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-/* Meme / video slot */
 .hero__media {
   flex: 1;
+  min-width: 0;
   min-height: 320px;
+
   display: grid;
   place-items: center;
+
   overflow: hidden;
-  background: rgba(255, 255, 255, .12);
-  border: 2px dashed var(--mint);   /* remove this border once you add the meme */
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px dashed var(--mint);
   border-radius: 30px;
 }
-.hero__media img,
+
 .hero__media video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-.hero__placeholder { font-size: 14px; font-weight: 600; text-align: center; padding: 20px; }
+  min-height: 320px;
 
-/* Vertical word: one solid, one outlined */
+  object-fit: cover;
+  border-radius: 28px;
+}
+
 .hero__word {
   display: flex;
-  font-size: clamp(60px, 9vw, 120px);
+  align-items: center;
+
+  font-size: clamp(60px, 8vw, 120px);
   font-weight: 900;
   line-height: 1;
+
   writing-mode: vertical-rl;
 }
-.hero__word .solid   { color: var(--white); }
-.hero__word .outline {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--mint);   /* outline text */
+
+.hero__word .solid {
+  color: var(--white);
 }
 
-/* 5. TEAM SECTION */
-.team-section { padding: 40px 6vw 80px; }
+.hero__word .outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--mint);
+}
 
-/* Tab-shaped label (rounded on the top-right only) */
+
+/* ========== 6. TEAM SECTION ========== */
+
+.team-section {
+  padding: 40px 6vw 80px;
+}
+
+.assignment-title {
+  margin-bottom: 28px;
+
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
 .tab {
   display: inline-block;
-  padding: 14px 50px 14px 30px;
+
+  padding: 14px 36px 14px 26px;
+
   background: var(--white);
   color: var(--indigo);
+
   border-radius: 0 40px 0 0;
+
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 1px;
 }
 
-/* Strip behind the cards */
+
+/* ========== 7. TEAM GRID ========== */
+
 .team {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 220px), 1fr)
+  );
+
+  align-items: stretch;
   gap: 24px;
-  padding: 60px 30px 40px;
-  background: rgba(85, 72, 182, .35);
+
+  padding: 40px 30px;
+
+  background: rgba(85, 72, 182, 0.35);
   border-radius: 0 40px 40px 40px;
 }
 
-/* 6. CARDS: light by default, turn into the indigo "featured" card on hover */
+
+/* ========== 8. TEAM CARDS ========== */
+
 .card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
   padding: 18px;
+
   background: var(--card);
   color: var(--bg);
+
+  border: 2px solid transparent;
   border-radius: 28px;
-  transition: transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
+
 .card:hover {
-  transform: translateY(-14px) scale(1.04);
+  transform: translateY(-10px);
+
   background: var(--indigo);
   color: var(--white);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+
+  border-color: rgba(223, 243, 236, 0.5);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
+
+
+/* Member image */
 
 .card__photo {
   width: 100%;
-  aspect-ratio: 3 / 3;
+  aspect-ratio: 1 / 1;
+
   object-fit: cover;
+
   background: var(--mint);
   border-radius: 20px;
-}
-.card__info {
-  list-style: none;
-  margin-top: 14px;
-  padding-left: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.7;
+
+  transition:
+    transform 0.3s ease,
+    border-radius 0.3s ease;
 }
 
-/* 7. MOBILE */
+.card:hover .card__photo {
+  border-radius: 25px;
+}
+
+
+/* Card content */
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+
+  padding: 4px 2px 0;
+}
+
+
+/* Member name */
+
+.card__name {
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* Card information */
+
+.card__info {
+  list-style: none;
+
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  padding: 0;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.9;
+}
+
+.card__info li {
+  margin-bottom: 7px;
+  overflow-wrap: anywhere;
+}
+
+.card__info li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ========== 9. VIEW MORE BUTTON ========== */
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  margin-top: auto;
+  padding: 11px 18px;
+
+  border: 2px solid var(--indigo);
+  border-radius: 999px;
+
+  background: var(--indigo);
+  color: var(--white);
+
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card__link:hover {
+  background: var(--violet);
+  border-color: var(--violet);
+  color: var(--white);
+
+  transform: translateY(-3px);
+}
+
+
+/* Button style when the card is hovered */
+
+.card:hover .card__link {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--indigo);
+}
+
+.card:hover .card__link:hover {
+  background: var(--mint);
+  border-color: var(--mint);
+}
+
+
+/* ========== 10. FOOTER ========== */
+
+.footer {
+  padding: 30px 6vw 36px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer p {
+  margin: 6px 0;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ========== 11. TABLET RESPONSIVENESS ========== */
+
+@media (max-width: 1000px) {
+  .hero {
+    gap: 28px;
+  }
+
+  .hero__panel {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .hero__media,
+  .hero__media video {
+    min-height: 260px;
+  }
+
+  .team {
+    gap: 18px;
+    padding: 30px 20px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
+
+
+/* ========== 12. MOBILE RESPONSIVENESS ========== */
+
 @media (max-width: 800px) {
-  .hero { flex-direction: column; align-items: flex-start; padding-right: 6vw; }
-  .hero__panel { width: 100%; flex-direction: column; border-radius: 40px; }
-  .hero__word { writing-mode: horizontal-tb; }
-  .nav { grid-template-columns: auto 1fr; gap: 12px; }
-  .nav__pill { justify-self: end; }
+  .nav {
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+
+    padding: 18px 5vw;
+  }
+
+  .nav__pill {
+    justify-self: end;
+    gap: 2px;
+  }
+
+  .nav__pill a {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 35px 5vw 45px;
+  }
+
+  .hero__text {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: clamp(42px, 10vw, 68px);
+  }
+
+  .hero__panel {
+    width: 100%;
+    flex: auto;
+
+    border-radius: 35px;
+  }
+
+  .hero__media,
+  .hero__media video {
+    min-height: 250px;
+  }
+
+  .hero__word {
+    font-size: clamp(45px, 9vw, 80px);
+    writing-mode: horizontal-tb;
+  }
+
+  .team-section {
+    padding: 30px 5vw 55px;
+  }
+
+  .team {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    padding: 25px 16px;
+    border-radius: 0 28px 28px 28px;
+  }
+
+  .card {
+    border-radius: 22px;
+  }
+
+  .card__photo {
+    border-radius: 16px;
+  }
+
+  .card__name {
+    font-size: 14px;
+  }
+
+  .card__info {
+    font-size: 11px;
+  }
+
+  .card__link {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+}
+
+
+/* ========== 13. SMALL MOBILE SCREENS ========== */
+
+@media (max-width: 480px) {
+  .nav {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .nav__pill {
+    justify-self: center;
+    max-width: 100%;
+  }
+
+  .nav__pill a {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .hero__panel {
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .hero__media,
+  .hero__media video {
+    min-height: 210px;
+  }
+
+  .hero__word {
+    justify-content: center;
+    font-size: 58px;
+  }
+
+  .assignment-title {
+    font-size: 25px;
+  }
+
+  .team {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    padding: 22px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card__photo {
+    max-height: 320px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .card__name {
+    font-size: 16px;
+  }
+
+  .card__info {
+    font-size: 12px;
+  }
+
+  .card__link {
+    font-size: 12px;
+  }
+}
+
+
+/* ========== 14. REDUCED MOTION ACCESSIBILITY ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
