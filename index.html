@@ -27,6 +27,7 @@
     <nav class="nav__pill">
       <a href="#home" class="active">🏠 Home</a>
       <a href="#game">❎ XO Game</a>
+      <a href="#memory-game">🎮 Memory Game</a>
       <a href="#team">👥 Team</a>
       <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
         🐙 GitHub
@@ -250,6 +251,50 @@
         <button class="game__cell" type="button" aria-label="Row 3, column 3"></button>
       </div>
       <button class="game__reset" id="game-reset" type="button">Play again</button>
+    </div>
+  </section>
+
+
+  <!-- ========== MEMORY GAME ========== -->
+  <section class="memory-game-section" id="memory-game" aria-labelledby="memory-game-title">
+    <div class="game-card memory-card-panel">
+      <p class="game__eyebrow">A QUICK MEMORY CHALLENGE</p>
+      <h2 class="game__title" id="memory-game-title">Memory Match</h2>
+      <p class="game__description">Flip the cards and match the pairs before the board is cleared.</p>
+
+      <div class="memory__stats" aria-live="polite">
+        <div class="memory__stat-box">
+          <span class="memory__label">Moves</span>
+          <strong id="memory-moves">0</strong>
+        </div>
+        <div class="memory__stat-box">
+          <span class="memory__label">Matches</span>
+          <strong id="memory-matches">0</strong>
+        </div>
+      </div>
+
+      <p class="game__status memory__status" id="memory-status">Find all the matching pairs.</p>
+
+      <div class="memory__board" role="group" aria-label="Memory match board">
+        <button class="memory-card" type="button" aria-label="Hidden memory card 1"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 2"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 3"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 4"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 5"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 6"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 7"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 8"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 9"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 10"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 11"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 12"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 13"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 14"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 15"></button>
+        <button class="memory-card" type="button" aria-label="Hidden memory card 16"></button>
+      </div>
+
+      <button class="game__reset memory__reset" id="memory-reset" type="button">Shuffle cards</button>
     </div>
   </section>
 

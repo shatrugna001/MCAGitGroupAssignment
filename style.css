@@ -337,6 +337,100 @@ a {
 }
 
 
+/* ========== MEMORY GAME ========== */
+
+.memory-game-section {
+  display: grid;
+  place-items: center;
+  padding: 0 6vw 75px;
+}
+
+.memory-card-panel {
+  width: min(100%, 620px);
+}
+
+.memory__stats {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 10px;
+}
+
+.memory__stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: rgba(23, 18, 58, 0.5);
+  border: 1px solid rgba(223, 243, 236, 0.2);
+}
+
+.memory__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--mint);
+}
+
+.memory__stat-box strong {
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.memory__status {
+  margin-bottom: 20px;
+}
+
+.memory__board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: min(100%, 430px);
+  margin: 0 auto 24px;
+}
+
+.memory-card {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 2px solid rgba(223, 243, 236, 0.25);
+  border-radius: 18px;
+  background: rgba(23, 18, 58, 0.65);
+  color: var(--white);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.memory-card:not(:disabled):hover {
+  transform: translateY(-3px);
+  border-color: var(--mint);
+  background: rgba(122, 107, 240, 0.5);
+}
+
+.memory-card.is-flipped,
+.memory-card.is-matched {
+  background: rgba(223, 243, 236, 0.16);
+  border-color: var(--mint);
+}
+
+.memory-card.is-matched {
+  background: rgba(223, 243, 236, 0.28);
+}
+
+.memory-card:disabled {
+  cursor: default;
+}
+
+.memory__reset {
+  margin-top: 10px;
+}
+
+
 /* ========== 5. HERO VIDEO PANEL ========== */
 
 .hero__panel {
@@ -724,6 +818,10 @@ a {
     padding: 30px 22px;
   }
 
+  .memory__board {
+    gap: 10px;
+  }
+
   .team {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -806,6 +904,10 @@ a {
 
   .game__cell {
     border-radius: 14px;
+  }
+
+  .memory__board {
+    gap: 8px;
   }
 
   .team {
