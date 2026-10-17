@@ -20,8 +20,6 @@
 
 <body>
 
-<<<<<<< HEAD
-=======
   <!-- ========== NAVIGATION ========== -->
   <header class="nav">
     <span class="nav__logo">GIT</span>
@@ -262,71 +260,7 @@
     <p>🌿 Every commit tells a story.</p>
   </footer>
 
-  <script>
-    const cells = Array.from(document.querySelectorAll(".game__cell"));
-    const status = document.querySelector("#game-status");
-    const resetButton = document.querySelector("#game-reset");
-    const winningLines = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8],
-      [0, 3, 6], [1, 4, 7], [2, 5, 8],
-      [0, 4, 8], [2, 4, 6]
-    ];
-    let currentPlayer = "X";
-    let gameOver = false;
-
-    function finishGame(message, winningLine = []) {
-      gameOver = true;
-      status.textContent = message;
-      cells.forEach((cell, index) => {
-        cell.disabled = true;
-        if (winningLine.includes(index)) {
-          cell.classList.add("is-winner");
-        }
-      });
-    }
-
-    function playTurn(event) {
-      const cell = event.currentTarget;
-      if (gameOver || cell.textContent) return;
-
-      cell.textContent = currentPlayer;
-      cell.classList.add(currentPlayer === "X" ? "is-x" : "is-o");
-      cell.setAttribute("aria-label", `${cell.getAttribute("aria-label")}, ${currentPlayer}`);
-
-      const winningLine = winningLines.find(([first, second, third]) =>
-        cells[first].textContent &&
-        cells[first].textContent === cells[second].textContent &&
-        cells[first].textContent === cells[third].textContent
-      );
-
-      if (winningLine) {
-        finishGame(`${currentPlayer} wins!`, winningLine);
-      } else if (cells.every((boardCell) => boardCell.textContent)) {
-        finishGame("It's a draw!");
-      } else {
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        status.textContent = `${currentPlayer}'s turn`;
-      }
-    }
-
-    function resetGame() {
-      currentPlayer = "X";
-      gameOver = false;
-      status.textContent = "X's turn";
-      cells.forEach((cell, index) => {
-        const row = Math.floor(index / 3) + 1;
-        const column = (index % 3) + 1;
-        cell.textContent = "";
-        cell.disabled = false;
-        cell.classList.remove("is-x", "is-o", "is-winner");
-        cell.setAttribute("aria-label", `Row ${row}, column ${column}`);
-      });
-    }
-
-    cells.forEach((cell) => cell.addEventListener("click", playTurn));
-    resetButton.addEventListener("click", resetGame);
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
->>>>>>> feature/game1
