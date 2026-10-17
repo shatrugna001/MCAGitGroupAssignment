@@ -219,6 +219,124 @@ a {
 }
 
 
+/* ========== XO GAME ========== */
+
+.game-section {
+  display: grid;
+  place-items: center;
+  padding: 25px 6vw 75px;
+}
+
+.game-card {
+  width: min(100%, 520px);
+  padding: 38px;
+  text-align: center;
+  background: rgba(85, 72, 182, 0.45);
+  border: 1px solid rgba(223, 243, 236, 0.25);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+.game__eyebrow {
+  color: var(--mint);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.game__title {
+  margin-top: 8px;
+  font-size: clamp(30px, 5vw, 42px);
+  font-weight: 900;
+}
+
+.game__description {
+  margin: 10px auto 22px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.game__status {
+  min-height: 28px;
+  margin-bottom: 14px;
+  color: var(--peach);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.game__board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(100%, 330px);
+  margin: 0 auto 24px;
+}
+
+.game__cell {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 2px solid rgba(223, 243, 236, 0.3);
+  border-radius: 18px;
+  background: rgba(23, 18, 58, 0.65);
+  color: var(--white);
+  font: inherit;
+  font-size: clamp(40px, 10vw, 64px);
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.game__cell:not(:disabled):hover {
+  transform: translateY(-3px);
+  border-color: var(--mint);
+  background: rgba(122, 107, 240, 0.5);
+}
+
+.game__cell:focus-visible,
+.game__reset:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 3px;
+}
+
+.game__cell.is-x {
+  color: var(--mint);
+}
+
+.game__cell.is-o {
+  color: var(--peach);
+}
+
+.game__cell.is-winner {
+  border-color: var(--mint);
+  background: rgba(223, 243, 236, 0.2);
+}
+
+.game__cell:disabled {
+  cursor: default;
+}
+
+.game__reset {
+  padding: 12px 24px;
+  border: 2px solid var(--white);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--bg);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.game__reset:hover {
+  transform: translateY(-2px);
+  border-color: var(--mint);
+  background: var(--mint);
+}
+
+
 /* ========== 5. HERO VIDEO PANEL ========== */
 
 .hero__panel {
@@ -598,6 +716,14 @@ a {
     padding: 30px 5vw 55px;
   }
 
+  .game-section {
+    padding: 15px 5vw 55px;
+  }
+
+  .game-card {
+    padding: 30px 22px;
+  }
+
   .team {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -667,6 +793,19 @@ a {
 
   .assignment-title {
     font-size: 25px;
+  }
+
+  .game-card {
+    padding: 28px 18px;
+    border-radius: 26px;
+  }
+
+  .game__board {
+    gap: 8px;
+  }
+
+  .game__cell {
+    border-radius: 14px;
   }
 
   .team {
