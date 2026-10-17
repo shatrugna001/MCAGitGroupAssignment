@@ -219,12 +219,21 @@ a {
 }
 
 
-/* ========== XO GAME ========== */
+/* ========== GAMES SHOWCASE ========== */
 
-.game-section {
+.games-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 32px;
+  padding: 25px 6vw 75px;
+}
+
+.game-section,
+.memory-game-section {
   display: grid;
   place-items: center;
-  padding: 25px 6vw 75px;
+  width: 100%;
 }
 
 .game-card {
@@ -400,13 +409,17 @@ a {
 /* ========== MEMORY GAME ========== */
 
 .memory-game-section {
-  display: grid;
-  place-items: center;
-  padding: 0 6vw 75px;
+  padding: 0;
 }
 
 .memory-card-panel {
   width: min(100%, 620px);
+}
+
+@media (max-width: 900px) {
+  .games-showcase {
+    grid-template-columns: 1fr;
+  }
 }
 
 .memory__stats {

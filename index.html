@@ -89,228 +89,93 @@
       MCA GIT ASSIGNMENT 2
     </h2>
 
-    <h3 class="tab">
-      👥 THE TEAM
-    </h3>
-
-
-    <!-- TEAM CARDS -->
-    <div class="team">
-
-
-      <!-- CARD 1: SHATRUGNA -->
-      <article class="card">
-
-        <img
-          class="card__photo"
-          src="images/shatru.jpeg"
-          alt="Shatrugna Munankar"
-          loading="lazy"
-        >
-
-        <div class="card__content">
-
-          <h4 class="card__name">👨‍💻 Shatrugna Munankar</h4>
-
-          <ul class="card__info">
-            <li>🪪 PRN: 3542611036</li>
-            <li>🎓 Masters in Computer Applications</li>
-            <li>💻 Git & Team Collaboration</li>
-          </ul>
-
-          <a
-            class="card__link"
-            href="shatru-portfolio/shatru.html"
-          >
-            🚀 View More →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- CARD 2: TANVI -->
-      <article class="card">
-
-        <img
-          class="card__photo"
-          src="images/Tanvi_img.jpeg"
-          alt="Tanvi Pardeshi"
-          loading="lazy"
-        >
-
-        <div class="card__content">
-
-          <h4 class="card__name">👩‍💻 Tanvi Pardeshi</h4>
-
-          <ul class="card__info">
-            <li>🪪 PRN: 3542611037</li>
-            <li>🎓 Masters in Computer Applications</li>
-            <li>🌸 Creativity & Teamwork</li>
-          </ul>
-
-          <a
-            class="card__link"
-            href="tanvi_portfolio/tanviweb_pg.html"
-          >
-            ✨ View More →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- CARD 3: SIMARJYOT -->
-      <article class="card">
-
-        <img
-          class="card__photo"
-          src="images/Simarrr-image.jpeg"
-          alt="Simarjyot Kaur Khanduja"
-          loading="lazy"
-        >
-
-        <div class="card__content">
-
-          <h4 class="card__name">👩‍💻 Simarjyot Kaur Khanduja</h4>
-
-          <ul class="card__info">
-            <li>🪪 PRN: 3542611044</li>
-            <li>🎓 Masters in Computer Applications</li>
-            <li>🤝 Collaboration & Learning</li>
-          </ul>
-
-          <a
-            class="card__link"
-            href="simarrr_portfolio/simarrr.html"
-          >
-            💜 View More →
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- CARD 4: BHUMI -->
-      <article class="card">
-
-        <img
-          class="card__photo"
-          src="images/photo.jpeg"
-          alt="Bhumi Phadtare"
-          loading="lazy"
-        >
-
-        <div class="card__content">
-
-          <h4 class="card__name">👩‍💻 Bhumi Phadtare</h4>
-
-          <ul class="card__info">
-            <li>🪪 PRN: 3547611049</li>
-            <li>🎓 Masters in Computer Applications</li>
-            <li>🌟 Innovation & Growth</li>
-          </ul>
-
-          <a
-            class="card__link"
-            href="Bhumipf/pf.html"
-          >
-            💖 View More →
-          </a>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- ========== XO GAME ========== -->
-  <section class="game-section" id="game" aria-labelledby="game-title">
-    <div class="game-card">
-      <p class="game__eyebrow">A QUICK TWO-PLAYER CHALLENGE</p>
-      <h2 class="game__title" id="game-title">Tic-Tac-Toe</h2>
-      <p class="game__description">Take turns placing X and O. Get three in a row to win!</p>
-
-      <div class="game__scoreboard" aria-label="Scoreboard">
-        <div class="game__score game__score--x">
-          <span>X</span>
-          <strong id="score-x">0</strong>
-        </div>
-        <div class="game__score game__score--o">
-          <span>O</span>
-          <strong id="score-o">0</strong>
-        </div>
-      </div>
-
-      <p class="game__status" id="game-status" aria-live="polite">X's turn</p>
-      <div class="game__board" role="group" aria-label="Tic-Tac-Toe board">
-        <button class="game__cell" type="button" aria-label="Row 1, column 1"></button>
-        <button class="game__cell" type="button" aria-label="Row 1, column 2"></button>
-        <button class="game__cell" type="button" aria-label="Row 1, column 3"></button>
-        <button class="game__cell" type="button" aria-label="Row 2, column 1"></button>
-        <button class="game__cell" type="button" aria-label="Row 2, column 2"></button>
-        <button class="game__cell" type="button" aria-label="Row 2, column 3"></button>
-        <button class="game__cell" type="button" aria-label="Row 3, column 1"></button>
-        <button class="game__cell" type="button" aria-label="Row 3, column 2"></button>
-        <button class="game__cell" type="button" aria-label="Row 3, column 3"></button>
-      </div>
-      <div class="game__actions">
-        <button class="game__reset" id="game-reset" type="button">Play again</button>
-        <button class="game__reset game__reset--secondary" id="score-reset" type="button">Reset score</button>
-      </div>
+  
     </div>
   </section>
 
 
-  <!-- ========== MEMORY GAME ========== -->
-  <section class="memory-game-section" id="memory-game" aria-labelledby="memory-game-title">
-    <div class="game-card memory-card-panel">
-      <p class="game__eyebrow">A QUICK MEMORY CHALLENGE</p>
-      <h2 class="game__title" id="memory-game-title">Memory Match</h2>
-      <p class="game__description">Flip the cards and match the pairs before the board is cleared.</p>
+  <!-- ========== GAMES SECTION ========== -->
+  <div class="games-showcase">
+    <section class="game-section" id="game" aria-labelledby="xo-game-title">
+      <div class="game-card">
+        <p class="game__eyebrow">A CLASSIC BATTLE</p>
+        <h2 class="game__title" id="xo-game-title">XO Challenge</h2>
+        <p class="game__description">Take turns, claim the board, and outplay your opponent.</p>
 
-      <div class="memory__stats" aria-live="polite">
-        <div class="memory__stat-box">
-          <span class="memory__label">Moves</span>
-          <strong id="memory-moves">0</strong>
+        <div class="game__scoreboard" aria-live="polite">
+          <div class="game__score game__score--x">
+            <span>X</span>
+            <strong id="score-x">0</strong>
+          </div>
+          <div class="game__score game__score--o">
+            <span>O</span>
+            <strong id="score-o">0</strong>
+          </div>
         </div>
-        <div class="memory__stat-box">
-          <span class="memory__label">Matches</span>
-          <strong id="memory-matches">0</strong>
+
+        <p class="game__status" id="game-status">X's turn</p>
+
+        <div class="game__board" role="grid" aria-label="XO board">
+          <button class="game__cell" type="button" aria-label="Row 1, column 1"></button>
+          <button class="game__cell" type="button" aria-label="Row 1, column 2"></button>
+          <button class="game__cell" type="button" aria-label="Row 1, column 3"></button>
+          <button class="game__cell" type="button" aria-label="Row 2, column 1"></button>
+          <button class="game__cell" type="button" aria-label="Row 2, column 2"></button>
+          <button class="game__cell" type="button" aria-label="Row 2, column 3"></button>
+          <button class="game__cell" type="button" aria-label="Row 3, column 1"></button>
+          <button class="game__cell" type="button" aria-label="Row 3, column 2"></button>
+          <button class="game__cell" type="button" aria-label="Row 3, column 3"></button>
+        </div>
+
+        <div class="game__actions">
+          <button class="game__reset" id="game-reset" type="button">Reset board</button>
+          <button class="game__reset game__reset--secondary" id="score-reset" type="button">Reset score</button>
         </div>
       </div>
+    </section>
 
-      <p class="game__status memory__status" id="memory-status">Find all the matching pairs.</p>
+    <section class="memory-game-section" id="memory-game" aria-labelledby="memory-game-title">
+      <div class="game-card memory-card-panel">
+        <p class="game__eyebrow">A QUICK MEMORY CHALLENGE</p>
+        <h2 class="game__title" id="memory-game-title">Memory Match</h2>
+        <p class="game__description">Flip the cards and match the pairs before the board is cleared.</p>
 
-      <div class="memory__board" role="group" aria-label="Memory match board">
-        <button class="memory-card" type="button" aria-label="Hidden memory card 1"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 2"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 3"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 4"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 5"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 6"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 7"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 8"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 9"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 10"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 11"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 12"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 13"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 14"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 15"></button>
-        <button class="memory-card" type="button" aria-label="Hidden memory card 16"></button>
+        <div class="memory__stats" aria-live="polite">
+          <div class="memory__stat-box">
+            <span class="memory__label">Moves</span>
+            <strong id="memory-moves">0</strong>
+          </div>
+          <div class="memory__stat-box">
+            <span class="memory__label">Matches</span>
+            <strong id="memory-matches">0</strong>
+          </div>
+        </div>
+
+        <p class="game__status memory__status" id="memory-status">Find all the matching pairs.</p>
+
+        <div class="memory__board" role="group" aria-label="Memory match board">
+          <button class="memory-card" type="button" aria-label="Hidden memory card 1"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 2"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 3"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 4"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 5"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 6"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 7"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 8"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 9"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 10"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 11"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 12"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 13"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 14"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 15"></button>
+          <button class="memory-card" type="button" aria-label="Hidden memory card 16"></button>
+        </div>
+
+        <button class="game__reset memory__reset" id="memory-reset" type="button">Shuffle cards</button>
       </div>
-
-      <button class="game__reset memory__reset" id="memory-reset" type="button">Shuffle cards</button>
-    </div>
-  </section>
+    </section>
+  </div>
 
 
   <!-- ========== FOOTER ========== -->
