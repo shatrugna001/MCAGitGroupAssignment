@@ -1,6 +1,9 @@
 const cells = Array.from(document.querySelectorAll(".game__cell"));
 const status = document.querySelector("#game-status");
 const resetButton = document.querySelector("#game-reset");
+const scoreResetButton = document.querySelector("#score-reset");
+const scoreX = document.querySelector("#score-x");
+const scoreO = document.querySelector("#score-o");
 const winningLines = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
   [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -8,10 +11,22 @@ const winningLines = [
 ];
 let currentPlayer = "X";
 let gameOver = false;
+const score = { X: 0, O: 0 };
+
+function updateScoreboard() {
+  scoreX.textContent = score.X;
+  scoreO.textContent = score.O;
+}
 
 function finishGame(message, winningLine = []) {
   gameOver = true;
   status.textContent = message;
+
+  if (winningLine.length) {
+    score[currentPlayer] += 1;
+    updateScoreboard();
+  }
+
   cells.forEach((cell, index) => {
     cell.disabled = true;
     if (winningLine.includes(index)) {
@@ -44,7 +59,7 @@ function playTurn(event) {
   }
 }
 
-function resetGame() {
+function resetBoard() {
   currentPlayer = "X";
   gameOver = false;
   status.textContent = "X's turn";
@@ -58,6 +73,7 @@ function resetGame() {
   });
 }
 
+<<<<<<< Updated upstream
 if (cells.length) {
   cells.forEach((cell) => cell.addEventListener("click", playTurn));
 }
@@ -169,3 +185,20 @@ if (memoryReset) {
 }
 
 resetMemoryGame();
+=======
+function resetGame() {
+  resetBoard();
+}
+
+function resetScore() {
+  score.X = 0;
+  score.O = 0;
+  updateScoreboard();
+  resetBoard();
+}
+
+cells.forEach((cell) => cell.addEventListener("click", playTurn));
+resetButton.addEventListener("click", resetGame);
+scoreResetButton.addEventListener("click", resetScore);
+updateScoreboard();
+>>>>>>> Stashed changes

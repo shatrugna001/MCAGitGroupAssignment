@@ -238,6 +238,17 @@
       <h2 class="game__title" id="game-title">Tic-Tac-Toe</h2>
       <p class="game__description">Take turns placing X and O. Get three in a row to win!</p>
 
+      <div class="game__scoreboard" aria-label="Scoreboard">
+        <div class="game__score game__score--x">
+          <span>X</span>
+          <strong id="score-x">0</strong>
+        </div>
+        <div class="game__score game__score--o">
+          <span>O</span>
+          <strong id="score-o">0</strong>
+        </div>
+      </div>
+
       <p class="game__status" id="game-status" aria-live="polite">X's turn</p>
       <div class="game__board" role="group" aria-label="Tic-Tac-Toe board">
         <button class="game__cell" type="button" aria-label="Row 1, column 1"></button>
@@ -250,7 +261,10 @@
         <button class="game__cell" type="button" aria-label="Row 3, column 2"></button>
         <button class="game__cell" type="button" aria-label="Row 3, column 3"></button>
       </div>
-      <button class="game__reset" id="game-reset" type="button">Play again</button>
+      <div class="game__actions">
+        <button class="game__reset" id="game-reset" type="button">Play again</button>
+        <button class="game__reset game__reset--secondary" id="score-reset" type="button">Reset score</button>
+      </div>
     </div>
   </section>
 
